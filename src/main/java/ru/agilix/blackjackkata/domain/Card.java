@@ -14,6 +14,10 @@ public class Card {
         return value;
     }
 
+    public String getCard() {
+        return this.card;
+    }
+
     public Card(String card) {
         this.card = card;
         initValues();
