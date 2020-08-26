@@ -14,7 +14,21 @@ public class Dealer {
     }
 
     public boolean canHit(ArrayList<Card> cards) {
-        return cards.stream().mapToInt(Card::getValue).sum() < 17 ;
+        int result = 0;
+        int reserve = 0;
+        for (Card card : cards) {
+            if (card.getValue().size() > 1) {
+                if (result + card.getValue().get(0) > 21) {
+                    result += card.getValue().get(1);
+                } else {
+                    result += card.getValue().get(0);
+                    reserve += 10;
+                }
+            } else {
+                result += card.getValue().get(0);
+            }
+        }
+        return result < 17;
     }
 
 }
