@@ -22,6 +22,7 @@ public class Card {
 
     private void initValues() {
         values.put("Q",10);
+        values.put("A",11);
         values.put("7",7);
         values.put("6",6);
     }
